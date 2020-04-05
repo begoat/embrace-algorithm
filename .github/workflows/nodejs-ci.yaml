@@ -25,6 +25,7 @@ jobs:
 
     - name: build blogs
       run: cd blogs && yarn --frozen-lockfile && yarn run build && yarn run deploy:ci
+      # https://help.github.com/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token
+      # we don't need manually create a developer token ourself because it generated automatically and will expire automatically
       env:
-        GITHUB_PAT: ${{ secrets.GitHub_PAT }}
-        demo: test
+        GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
