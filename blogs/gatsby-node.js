@@ -1,5 +1,10 @@
 const _ = require('lodash');
 const { createFilePath } = require('gatsby-source-filesystem');
+const customConfig = require('./webpack.custom.js');
+
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  actions.setWebpackConfig(customConfig);
+}
 
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
   const blogPost = require.resolve('./src/templates/blog-post.js');
@@ -23,7 +28,6 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
   const posts = _.get(results, 'data.allMarkdownRemark.edges', []);
   posts.forEach(post => {
     const { slug } = post.node.fields;
-    console.log('slug', [slug]);
     createPage({
       path: slug,
       component: blogPost,
