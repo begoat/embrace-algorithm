@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require @babel/register src/**/*.spec.js",
-    "tdd": "mocha --watch --require @babel/register src/**/*.spec.js",
+    "test": "mocha --require @babel/register src/**/*/*.spec.js",
+    "tdd": "mocha --watch --require @babel/register src/**/*/*.spec.js",
     "lint": "eslint src"
   },
   "repository": {
