@@ -27,3 +27,4 @@ jobs:
       run: cd blogs && yarn --frozen-lockfile && yarn run build && yarn run deploy:ci
       env:
         GITHUB_PAT: ${{ secrets.GitHub_PAT }}
+        demo: test
