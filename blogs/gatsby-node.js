@@ -7,7 +7,16 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
 }
 
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
-  const blogPost = require.resolve('./src/templates/blog-post.js');
+  // build blog-index page
+  const blogIndex = require.resolve('./src/templates/blog-index.tsx');
+  createPage({
+    path: '/',
+    component: blogIndex,
+    context: {}
+  });
+
+  // build blog-post page
+  const blogPost = require.resolve('./src/templates/blog-post.tsx');
   const results = await graphql(`
     {
       allMarkdownRemark {
@@ -24,7 +33,6 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
       }
     }
   `);
-
   const posts = _.get(results, 'data.allMarkdownRemark.edges', []);
   posts.forEach(post => {
     const { slug } = post.node.fields;

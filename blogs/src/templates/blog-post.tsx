@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-const BlogPostTmpl = ({ data }) => {
+const BlogPostTmpl = ({ data }: any) => {
   const { html } = data.markdownRemark;
   return (
     <section>
