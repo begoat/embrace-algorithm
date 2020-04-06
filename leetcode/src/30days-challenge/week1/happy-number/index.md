@@ -1,3 +1,8 @@
+---
+date: "2020-04-05"
+title: "Happy Number"
+---
+
 ## Happy Number (48mins)
 
 ### Question：
