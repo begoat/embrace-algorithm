@@ -3,7 +3,7 @@ import { assert } from 'chai';
 import { demo } from './index';
 
 const testcase = [
-  [19, true],
+  [2324, true],
 ];
 
 describe('demo', function() {
