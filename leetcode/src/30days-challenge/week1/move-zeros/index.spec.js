@@ -14,7 +14,7 @@ describe('moveZeroes', function() {
   testcase.map(t => {
     const [param, result] = t;
     return it(param.toString(), () => {
-      assert.equal(moveZeroes(param), result);
+      assert.deepEqual(moveZeroes(param), result);
     });
   });
 });
