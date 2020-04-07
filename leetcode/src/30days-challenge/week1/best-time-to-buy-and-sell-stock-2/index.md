@@ -33,7 +33,8 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 ```
 
 ### Process:
-- placeholder
+- 一天只支持一个操作，要么买，要么买了
+- 这个题目 看下来 有点像 找最大连续的上升子区间 收尾做差，不同区间累加
 
 ### Answer:
 
