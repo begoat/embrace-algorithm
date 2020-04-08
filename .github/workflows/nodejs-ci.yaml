@@ -24,7 +24,7 @@ jobs:
       run: cd leetcode && yarn --frozen-lockfile && yarn run test
 
     - name: build blogs
-      run: git config --global user.email "hylbegoat@gmail.com" && git config --global user.name "William Huang" && cd blogs && yarn --frozen-lockfile && yarn run build && yarn run deploy:ci
+      run: git config --global user.email "hylbegoat@gmail.com" && git config --global user.name "William Huang" && cd blogs && yarn --frozen-lockfile && yarn run deploy:ci
       # https://help.github.com/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token
       # we don't need manually create a developer token ourself because it generated automatically and will expire automatically
       env:
