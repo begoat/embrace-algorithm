@@ -3,7 +3,7 @@ date: "2020-04-08"
 title: "countElements"
 ---
 
-## countElements ( mins)
+## countElements (8 mins)
 
 ### Question：
 
@@ -34,7 +34,8 @@ Explanation: Two 1s are counted cause 2 is in arr.
 ```
 
 ### Process:
-- placeholder
+- 有一点感觉了，看到这个题目就想到 用object 累加下，扫一遍得到所有的数据的count
+- 在扫一遍，就知道所有结果了
 
 ### Answer:
 
