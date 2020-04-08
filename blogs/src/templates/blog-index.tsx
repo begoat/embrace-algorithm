@@ -21,7 +21,7 @@ export const BlogIndexTmpl = ({ data }: any) => {
               <Link
                 style={{ boxShadow: 'none' }}
                 to={slug}
-                rel="bookmark"
+                // rel="bookmark" // FIXME: add this caused prefix missing
               >{title}
               </Link>
             </h3>
