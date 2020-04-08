@@ -3,7 +3,14 @@ import { assert } from 'chai';
 import { groupAnagrams } from './index';
 
 const testcase = [
-  [2324, true],
+  [
+    ['eat', 'tea', 'tan', 'ate', 'nat', 'bat'],
+    [
+      ['ate', 'eat', 'tea'],
+      ['nat', 'tan'],
+      ['bat']
+    ]
+  ],
 ];
 
 describe('groupAnagrams', function() {
@@ -14,7 +21,7 @@ describe('groupAnagrams', function() {
   testcase.map(t => {
     const [param, result] = t;
     return it(param.toString(), () => {
-      assert.equal(groupAnagrams(param), result);
+      assert.equal(groupAnagrams(param).length, result.length);
     });
   });
 });
