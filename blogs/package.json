@@ -61,7 +61,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "predeploy": "npm run clean && npm run build:sub",
     "deploy": "gh-pages -d public",
-    "deploy:ci": "gh-pages -d public -r https://$GITHUB_PAT@github.com/begoat/embrace-algorithm.git"
+    "deploy:ci": "npm run predeploy && gh-pages -d public -r https://$GITHUB_PAT@github.com/begoat/embrace-algorithm.git"
   },
   "repository": {
     "type": "git",
