@@ -9,6 +9,17 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
+export const getMiddle = arr => {
+  const idx = Math.floor(arr.length / 2);
+  return arr[idx];
+};
+
 export const middleNode = function(head) {
-  return true;
+  let nodeList = [head];
+  while(head.next !== null) {
+    nodeList.push(head.next);
+    head = head.next;
+  }
+
+  return getMiddle(nodeList);
 };

@@ -1,9 +1,10 @@
 import { assert } from 'chai';
 
-import { middleNode } from './index';
+import { getMiddle } from './index';
 
 const testcase = [
-  [2324, true],
+  [[1,2,3,4,5], 3],
+  [[1,2,3,4,5,6], 4],
 ];
 
 describe('middleNode', function() {
@@ -14,7 +15,7 @@ describe('middleNode', function() {
   testcase.map(t => {
     const [param, result] = t;
     return it(param.toString(), () => {
-      assert.equal(middleNode(param), result);
+      assert.equal(getMiddle(param), result);
     });
   });
 });

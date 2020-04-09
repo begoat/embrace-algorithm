@@ -28,7 +28,7 @@ Since the list has two middle nodes with values 3 and 4, we return the second on
 ```
 
 ### Process:
-- placeholder
+- mark 感觉mark一下，遍历的时候把每个序号存一下，然后到时候直接return 这个obj 就可以了 o1 的算法
 
 ### Answer:
 
