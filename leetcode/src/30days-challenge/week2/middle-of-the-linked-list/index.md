@@ -3,7 +3,7 @@ date: "2020-04-09"
 title: "Middle of the Linked List"
 ---
 
-## Middle of the Linked List ( mins)
+## Middle of the Linked List (10 mins)
 
 ### Question：
 
