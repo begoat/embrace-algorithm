@@ -32,7 +32,7 @@ if (output && name) {
 }
 
 function YYYYMMDD() {
-  const zeroIfLess10 = num => num > 10 ? num : `0${num}`;
+  const zeroIfLess10 = num => num >= 10 ? num : `0${num}`;
   const currDate = new Date();
   const year = currDate.getFullYear();
   const month = zeroIfLess10(currDate.getMonth() + 1);
