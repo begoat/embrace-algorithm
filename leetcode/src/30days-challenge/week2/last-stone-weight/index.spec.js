@@ -1,9 +1,9 @@
 import { assert } from 'chai';
 
-import { lastStoneWeight } from './index';
+import { lastStoneWeight, sortArrayDesc } from './index';
 
 const testcase = [
-  [2324, true],
+  [[2,7,4,1,8,1], 1, [8,7,4,2,1,1]],
 ];
 
 describe('lastStoneWeight', function() {
@@ -12,9 +12,10 @@ describe('lastStoneWeight', function() {
   });
 
   testcase.map(t => {
-    const [param, result] = t;
+    const [param, result1, result2] = t;
     return it(param.toString(), () => {
-      assert.equal(lastStoneWeight(param), result);
+      assert.deepEqual(sortArrayDesc(param), result2);
+      assert.deepEqual(lastStoneWeight(param), result1);
     });
   });
 });

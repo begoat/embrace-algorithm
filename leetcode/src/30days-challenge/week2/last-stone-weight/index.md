@@ -30,7 +30,7 @@ we combine 1 and 1 to get 0 so the array converts to [1] then that's the value o
 ```
 
 ### Process:
-- placeholder
+- 排序然后保持这个排序的状态，直到只剩最后一个元素
 
 ### Answer:
 
