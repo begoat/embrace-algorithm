@@ -14,7 +14,7 @@ describe('demo', function() {
   testcase.map(t => {
     const [param, result] = t;
     return it(param.toString(), () => {
-      assert.equal(demo(param), result);
+      assert.deepEqual(demo(param), result);
     });
   });
 });
