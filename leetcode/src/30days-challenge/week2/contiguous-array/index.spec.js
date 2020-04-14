@@ -3,7 +3,14 @@ import { assert } from 'chai';
 import { findMaxLength } from './index';
 
 const testcase = [
-  [2324, true],
+  [[0,1], 2],
+  [[0,1,0], 2],
+  [[0,1,0,1], 4],
+  [[0,1,0,0], 2],
+  [[0,1,0,0,1], 4],
+  [[0,1,0,0,0], 2],
+  [[0,1,0,0,0,1,1], 6],
+  [[0,1,1,0,1,1,1,0], 4]
 ];
 
 describe('findMaxLength', function() {
