@@ -3,18 +3,21 @@
  * @return {number}
  */
 export const findMaxLength = function(nums) {
-  const result = {
-    '0': 0,
-    '1': 0
-  };
-
+  let counts = {
+    0: [-1]
+  }; // key is `count`
+  let count = 0;
   for (let i = 0; i < nums.length; i++) {
     if(nums[i] === 0) {
-      result['0']++;
+      count--;
     } else if (nums[i] === 1) {
-      result['1']++;
+      count++;
     }
+
+    counts[count] = counts[count] === undefined ? [i] : counts[count].concat([i]);
   }
 
-  return Math.min(result['0'], result['1']) * 2;
+  return Object.keys(counts).reduce((accu, curr) => {
+    return Math.max(accu, counts[curr][counts[curr].length - 1] - counts[curr][0]);
+  }, 0);
 };
