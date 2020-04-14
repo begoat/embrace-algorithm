@@ -3,7 +3,7 @@ date: "2020-04-13"
 title: "lastStoneWeight"
 ---
 
-## lastStoneWeight ( mins)
+## lastStoneWeight (30 mins)
 
 ### Question：
 
@@ -30,7 +30,7 @@ we combine 1 and 1 to get 0 so the array converts to [1] then that's the value o
 ```
 
 ### Process:
-- 排序然后保持这个排序的状态，直到只剩最后一个元素
+- 原以为大家都会自己写一个排序的，谁知道 都用了sort hhh
 
 ### Answer:
 

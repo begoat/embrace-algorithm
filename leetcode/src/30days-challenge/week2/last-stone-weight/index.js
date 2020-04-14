@@ -2,28 +2,24 @@
  * @param {number[]} stones
  * @return {number}
  */
-
-export const insertNodeToLinkList = (val, linkList) => {
-
-};
-
 export const sortArrayDesc = arr => {
-  if (!arr.length) {
-    return [];
-  }
-
-  let result = [{ val: arr[1], nxt: null }];
-  for (let i = 1; i < arr.length; i++) {
-    insertNodeToLinkList(arr[i], linkList);
-  }
-
-  return result;
+  return arr.slice().sort((a, b) => b - a);
 };
 
 export const lastStoneWeight = function(stones) {
-  const sortArrayAsc = () => {
+  let sortedArray = sortArrayDesc(stones);
+  while(sortedArray.length > 1) {
+    const e1 = sortedArray.shift();
+    const e2 = sortedArray.shift();
 
-  };
+    if (e1 === e2) {
+      continue;
+    } else {
+      const delta = Math.abs(e1 - e2);
+      sortedArray = sortArrayDesc(sortedArray.concat([delta]));
+      continue;
+    }
+  }
 
-  return true;
+  return sortedArray[0] || 0;
 };
