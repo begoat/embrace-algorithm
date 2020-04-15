@@ -3,7 +3,7 @@ import { assert } from 'chai';
 import { maxSubArray } from './index';
 
 const testcase = [
-  [2324, true],
+  [[-2,1,-3,4,-1,2,1,-5,4], 6],
 ];
 
 describe('maxSubArray', function() {
