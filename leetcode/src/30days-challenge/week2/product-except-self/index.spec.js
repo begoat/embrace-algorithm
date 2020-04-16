@@ -3,7 +3,8 @@ import { assert } from 'chai';
 import { productExceptSelf } from './index';
 
 const testcase = [
-  [2324, true],
+  [[1,2,3,4], [24,12,8,6]],
+  [[4,3,2,1,2], [12,16,24,48,24]]
 ];
 
 describe('productExceptSelf', function() {

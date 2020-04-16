@@ -1,9 +1,10 @@
 ---
 date: "2020-04-16"
 title: "productExceptSelf"
+status: false
 ---
 
-## productExceptSelf ( mins)
+## productExceptSelf (20 mins)
 
 ### Question：
 
@@ -26,7 +27,13 @@ Output: [24,12,8,6]
 ```
 
 ### Process:
-- placeholder
+- [1] => [1]
+- [1,2] => [2,1]
+- [1,2,3] => [2*3,1*3,1*2]
+- [1,2,3,4] => [2*3*4,1*3*4,1*2*4,1*2*3]
+
+- 写着写着 发现不是O(n)...
+- 虽然通过了，有必要在研究下 的
 
 ### Answer:
 
