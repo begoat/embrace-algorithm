@@ -3,7 +3,8 @@ import { assert } from 'chai';
 import { stringShift } from './index';
 
 const testcase = [
-  [2324, true],
+  [['abc', [[0,1],[1,2]]], 'cab'],
+  [['abcdefg', [[1,1],[1,1],[0,2],[1,3]]], 'efgabcd'],
 ];
 
 describe('stringShift', function() {
@@ -14,7 +15,7 @@ describe('stringShift', function() {
   testcase.map(t => {
     const [param, result] = t;
     return it(param.toString(), () => {
-      assert.deepEqual(stringShift(param), result);
+      assert.deepEqual(stringShift(...param), result);
     });
   });
 });

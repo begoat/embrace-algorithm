@@ -41,7 +41,8 @@ Explanation:
 ```
 
 ### Process:
-- placeholder
+- 一不小心看到了 hints
+ * 左右可以抵消。。。😂
 
 ### Answer:
 
