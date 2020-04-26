@@ -3,7 +3,8 @@ import { assert } from 'chai';
 import { pivotIndex } from './index';
 
 const testcase = [
-  [2324, true],
+  [[1, 7, 3, 6, 5, 6], 3],
+  [[1, 2, 3], -1],
 ];
 
 describe('pivotIndex', function() {

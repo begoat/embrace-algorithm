@@ -4,7 +4,7 @@ title: "Find Pivot Index"
 qIdx: 1144
 ---
 
-## pivotIndex (20+ mins)
+## pivotIndex (30 mins)
 
 ### Question：
 
