@@ -4,7 +4,7 @@ title: "Find Pivot Index"
 qIdx: 1144
 ---
 
-## pivotIndex ( mins)
+## pivotIndex (20+ mins)
 
 ### Question：
 
@@ -34,7 +34,20 @@ There is no index that satisfies the conditions in the problem statement.
 ```
 
 ### Process:
-- placeholder
+- O(n^2) solution(direct solution):
+  - iterate the given array, calc sum of numbers to the left and sum of numbers to the right
+  - if match the condition, then return it.
+    * because we iterate from left to right, so the first will be pivot
+- O(n)
+  - can we record something more during loop, so that we won't calc the sum every time
+  - yes we can
+    - we need pre-calc the sum of all items in the array
+    - then in another non-nested for-loop
+      - for the first item, we know the left is 0, right to current item is the sum subtract current item
+        - we store the left in an temp variable
+      - the rest item, we just need add variable and prev-item so that we can know the left sum
+
+
 
 ### Answer:
 
