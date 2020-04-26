@@ -4,7 +4,7 @@ title: "Plus One"
 qIdx: 1148
 ---
 
-## Plus One ( mins)
+## Plus One (20 mins)
 
 ### Question：
 

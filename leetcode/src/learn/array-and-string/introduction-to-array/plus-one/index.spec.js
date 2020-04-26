@@ -3,7 +3,8 @@ import { assert } from 'chai';
 import { plusOne } from './index';
 
 const testcase = [
-  [2324, true],
+  [[1,2,3], [1,2,4]],
+  [[4,3,2,1], [4,3,2,2]]
 ];
 
 describe('plusOne', function() {
