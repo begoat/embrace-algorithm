@@ -4,7 +4,7 @@ title: "Largest Number At Least Twice of Others"
 qIdx: 1147
 ---
 
-## Largest Number At Least Twice of Others ( mins)
+## Largest Number At Least Twice of Others (10 mins)
 
 ### Question：
 
@@ -30,7 +30,12 @@ Explanation: 4 isn't at least as big as twice the value of 3, so we return -1.
 ```
 
 ### Process:
-- placeholder
+- direct method O(n)
+  - iterate the input array
+    * get the max one, record the index of that number
+    * calc the twice of each item and store it in another array
+  - iterate the other array, check the item is larger than ...
+
 
 ### Answer:
 
