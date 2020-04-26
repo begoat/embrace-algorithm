@@ -28,7 +28,7 @@ Explanation: The array represents the integer 4321.
 ```
 
 ### Process:
-- placeholder
+- Just like Big Int Plus one, we need carry bit in the array.
 
 ### Answer:
 
