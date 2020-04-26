@@ -3,7 +3,8 @@ import { assert } from 'chai';
 import { dominantIndex } from './index';
 
 const testcase = [
-  [2324, true],
+  [[3, 6, 1, 0], 1],
+  [[1, 2, 3, 4], -1],
 ];
 
 describe('dominantIndex', function() {

@@ -4,7 +4,7 @@ title: "Largest Number At Least Twice of Others"
 qIdx: 1147
 ---
 
-## Largest Number At Least Twice of Others (10 mins)
+## Largest Number At Least Twice of Others (22 mins)
 
 ### Question：
 
