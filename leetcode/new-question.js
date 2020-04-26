@@ -1,6 +1,8 @@
 const fs = require('fs');
 const { program } = require('commander');
 
+// TODO: add index
+// TODO: auto convert title to lower case splited by '-'
 program
   .option('-d, --debug', 'output extra debugging')
   .option('-o, --output <outputDir>', 'specific the output dir')
