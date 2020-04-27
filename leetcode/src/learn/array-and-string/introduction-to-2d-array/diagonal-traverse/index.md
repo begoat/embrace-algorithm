@@ -27,7 +27,13 @@ Output:  [1,2,4,7,5,3,6,8,9]
 ```
 
 ### Process:
-- placeholder
+- O(n^2) method
+- calc the max(M, N)
+- rules (check in the boundary of array before, so that other lang except js won't throw error)
+  - odd  (0, 0)
+  - even (1, 0) (0, 1)
+  - odd  (0, 2) (1, 1) (2, 0)
+  - even (3, 0) (2, 1) (1, 2) (0, 3)
 
 ### Answer:
 
