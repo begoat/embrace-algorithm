@@ -33,7 +33,8 @@ Output: [1,2,3,4,8,12,11,10,9,5,6,7]
 ```
 
 ### Process:
-- placeholder
+- use a variable to record direction( (0,1,2,3) % 4 ) means four direction, selfAdd if exceed the boundary
+- use i,j to loop
 
 ### Answer:
 
