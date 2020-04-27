@@ -28,7 +28,10 @@ Output:
 ```
 
 ### Process:
-- placeholder
+- O(n^2) method
+  - calc each row using a nested loop
+- more advanced method
+  - maybe there is a formulae
 
 ### Answer:
 
