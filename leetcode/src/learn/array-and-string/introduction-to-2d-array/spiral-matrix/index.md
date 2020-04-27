@@ -3,7 +3,7 @@ date: "2020-04-27"
 title: "Spiral Matrix"
 ---
 
-## Spiral Matrix ( mins)
+## Spiral Matrix (20 mins)
 
 ### Question：
 
