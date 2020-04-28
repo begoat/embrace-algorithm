@@ -3,7 +3,13 @@ import { assert } from 'chai';
 import { generate } from './index';
 
 const testcase = [
-  [2324, true],
+  [5, [
+    [1],
+   [1,1],
+  [1,2,1],
+ [1,3,3,1],
+[1,4,6,4,1]
+]],
 ];
 
 describe('generate', function() {

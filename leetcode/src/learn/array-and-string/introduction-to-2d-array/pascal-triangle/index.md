@@ -4,7 +4,7 @@ title: "Pascal's Triangle"
 qIdx: 1170
 ---
 
-## Pascal's Triangle ( mins)
+## Pascal's Triangle (30 mins)
 
 ### Question：
 
