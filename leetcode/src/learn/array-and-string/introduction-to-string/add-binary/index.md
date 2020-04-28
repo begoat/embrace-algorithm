@@ -26,7 +26,8 @@ Output: "10101"
 ```
 
 ### Process:
-- placeholder
+- convert the input string into two arrays
+- add digit by digit starting by the last index and index--
 
 ### Answer:
 

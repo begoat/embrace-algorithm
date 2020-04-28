@@ -25,7 +25,8 @@ Explanation: There is no common prefix among the input strings.
 ```
 
 ### Process:
-- placeholder
+- use a for loop whose index string from 0, and ++ the index
+- if not equal, break the loop
 
 ### Answer:
 

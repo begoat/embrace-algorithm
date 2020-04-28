@@ -26,7 +26,8 @@ Output: -1
 ```
 
 ### Process:
-- placeholder
+- convert the input string into array
+- use a simple for loop the check whether equality
 
 ### Answer:
 
