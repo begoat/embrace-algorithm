@@ -3,7 +3,8 @@ import { assert } from 'chai';
 import { addBinary } from './index';
 
 const testcase = [
-  [2324, true],
+  [['11', '1'], '100'],
+  [['1010', '1011'], '10101'],
 ];
 
 describe('addBinary', function() {
@@ -14,7 +15,7 @@ describe('addBinary', function() {
   testcase.map(t => {
     const [param, result] = t;
     return it(param.toString(), () => {
-      assert.deepEqual(addBinary(param), result);
+      assert.deepEqual(addBinary(...param), result);
     });
   });
 });

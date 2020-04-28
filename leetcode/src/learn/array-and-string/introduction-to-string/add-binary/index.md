@@ -3,7 +3,7 @@ date: "2020-04-28"
 title: "Add Binary"
 ---
 
-## Add Binary ( mins)
+## Add Binary (25 mins)
 
 ### Question：
 
