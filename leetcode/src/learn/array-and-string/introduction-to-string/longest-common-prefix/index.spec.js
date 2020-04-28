@@ -3,7 +3,11 @@ import { assert } from 'chai';
 import { longestCommonPrefix } from './index';
 
 const testcase = [
-  [2324, true],
+  [['flower','flow','flight'], 'fl'],
+  [['dog','racecar','car'], ''],
+  [[''], ''],
+  [['asdasd'], 'asdasd'],
+  [['',''], '']
 ];
 
 describe('longestCommonPrefix', function() {
