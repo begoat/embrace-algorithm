@@ -3,7 +3,10 @@ import { assert } from 'chai';
 import { strStr } from './index';
 
 const testcase = [
-  [2324, true],
+  [['hello', 'll'], 2],
+  [['aaaaa', 'bba'], -1],
+  [['', ''], 0],
+  [['aaa', 'aa'], 0]
 ];
 
 describe('strStr', function() {
@@ -14,7 +17,7 @@ describe('strStr', function() {
   testcase.map(t => {
     const [param, result] = t;
     return it(param.toString(), () => {
-      assert.deepEqual(strStr(param), result);
+      assert.deepEqual(strStr(...param), result);
     });
   });
 });

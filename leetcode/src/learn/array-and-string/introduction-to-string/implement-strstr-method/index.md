@@ -4,7 +4,7 @@ title: "Implement strStr()"
 qIdx: 1161
 ---
 
-## Implement strStr() ( mins)
+## Implement strStr() (20 mins)
 
 ### Question：
 
@@ -28,6 +28,7 @@ Output: -1
 ### Process:
 - convert the input string into array
 - use a simple for loop the check whether equality
+- complexity is O(n)
 
 ### Answer:
 
