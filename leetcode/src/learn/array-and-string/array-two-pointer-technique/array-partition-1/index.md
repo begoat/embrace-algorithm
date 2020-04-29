@@ -26,6 +26,7 @@ Explanation: n is 2, and the maximum sum of pairs is 4 = min(1, 2) + min(3, 4).
 ### Process:
 - we need a sort algorithm to sort the array
 - then we just calc the sum of array skipping the even index
+- use two pointer tech to remove the complexity.
 
 ### Answer:
 
