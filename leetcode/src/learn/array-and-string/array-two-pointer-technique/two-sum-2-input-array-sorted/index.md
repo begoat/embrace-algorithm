@@ -1,6 +1,7 @@
 ---
 date: "2020-04-29"
 title: "Two Sum II - Input array is sorted"
+timeSpent: 0
 ---
 
 ## twoSum ( mins)

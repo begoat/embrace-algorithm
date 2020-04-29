@@ -1,6 +1,7 @@
 ---
 date: "YYYY-MM-DD"
 title: "demo"
+timeSpent: 0
 ---
 
 ## demo ( mins)
