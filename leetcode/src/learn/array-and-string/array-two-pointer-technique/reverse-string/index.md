@@ -3,7 +3,7 @@ date: "2020-04-29"
 title: "Reverse String"
 ---
 
-## Reverse String ( mins)
+## Reverse String (6 mins)
 
 ### Question：
 
@@ -27,7 +27,7 @@ Output: ["h","a","n","n","a","H"]
 ```
 
 ### Process:
-- placeholder
+- 如题
 
 ### Answer:
 

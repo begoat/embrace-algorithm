@@ -3,7 +3,8 @@ import { assert } from 'chai';
 import { reverseString } from './index';
 
 const testcase = [
-  [2324, true],
+  [['h','e','l','l','o'], ['o','l','l','e','h']],
+  [['H','a','n','n','a','h'], ['h','a','n','n','a','H']]
 ];
 
 describe('reverseString', function() {
