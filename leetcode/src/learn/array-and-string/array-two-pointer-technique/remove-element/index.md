@@ -50,7 +50,12 @@ It doesn't matter what values are set beyond the returned length.
 ```
 
 ### Process:
-- placeholder
+- So stupid question description...
+- just modify the input array and return the length
+- use two pointer
+  - one for iteration
+  - one be placed in the end (always keep elements after second pointer is the target val)
+    - if current iteration value if the target value, just swap it with second pointer
 
 ### Answer:
 

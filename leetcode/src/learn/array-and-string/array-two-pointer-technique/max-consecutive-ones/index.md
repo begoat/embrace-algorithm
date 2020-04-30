@@ -24,7 +24,8 @@ Explanation: The first two digits or the last three digits are consecutive 1s.
 ```
 
 ### Process:
-- placeholder
+- one for outer iteration
+    - one for inner loop
 
 ### Answer:
 

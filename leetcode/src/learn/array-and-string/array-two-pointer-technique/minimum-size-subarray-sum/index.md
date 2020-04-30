@@ -22,7 +22,7 @@ Explanation: the subarray [4,3] has the minimal length under the problem constra
 ```
 
 ### Process:
-- placeholder
+- no idea right now
 
 ### Answer:
 
