@@ -1,7 +1,7 @@
 ---
 date: "2020-04-29"
 title: "Array Partition I"
-timeSpent: 0
+timeSpent: 13
 ---
 
 ## Array Partition I ( mins)
