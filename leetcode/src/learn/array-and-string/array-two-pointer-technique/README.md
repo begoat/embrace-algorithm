@@ -7,3 +7,10 @@ In the previous chapter, we solve some problems by iterating the array. Typicall
   > Iterate the array from two ends to the middle.
 
   > And it is worth noting that this technique is often used in a sorted array.
+
+* This is a very common scenario of using the two-pointer technique when you need:
+  > One slow-runner and one fast-runner at the same time.
+
+  > The key to solving this kind of problems is to **Determine the movement strategy for both pointers.**
+
+  > Similar to the previous scenario, you might sometimes need to sort the array before using the two-pointer technique. And you might need a greedy thought to determine your movement strategy.
