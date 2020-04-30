@@ -3,7 +3,8 @@ import { assert } from 'chai';
 import { arrayPairSum } from './index';
 
 const testcase = [
-  [2324, true],
+  [[1,4,3,2], 4],
+  [[1, 1], 1],
 ];
 
 describe('arrayPairSum', function() {
