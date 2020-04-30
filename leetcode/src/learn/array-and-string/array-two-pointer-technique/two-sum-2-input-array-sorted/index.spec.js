@@ -3,7 +3,7 @@ import { assert } from 'chai';
 import { twoSum } from './index';
 
 const testcase = [
-  [2324, true],
+  [[[2,7,11,15], 9], [1,2]],
 ];
 
 describe('twoSum', function() {
@@ -14,7 +14,7 @@ describe('twoSum', function() {
   testcase.map(t => {
     const [param, result] = t;
     return it(param.toString(), () => {
-      assert.deepEqual(twoSum(param), result);
+      assert.deepEqual(twoSum(...param), result);
     });
   });
 });

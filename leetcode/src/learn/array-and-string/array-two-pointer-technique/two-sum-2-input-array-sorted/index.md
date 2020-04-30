@@ -4,7 +4,7 @@ title: "Two Sum II - Input array is sorted"
 timeSpent: 0
 ---
 
-## twoSum ( mins)
+## twoSum (20 mins)
 
 ### Question：
 
@@ -24,7 +24,7 @@ Explanation: The sum of 2 and 7 is 9. Therefore index1 = 1, index2 = 2.
 ```
 
 ### Process:
-- no assumption that the number is position so that we can filter some elements larger than target
+- there is no assumption that the number is position so that we can filter some elements larger than target
 - keep in mind that we should use two pointer technique
 - In the out loop, we can fix one number and calc the rest number by substract from target.
   - use another pointer to check
