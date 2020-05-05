@@ -4,25 +4,16 @@
  * @return {number}
  */
 export const minSubArrayLen = function(s, nums) {
-  const getSumOfArrayBoundary = (array, i, j) => {
-    return array.reduce((accu, curr, idx) => {
-      if (idx >= i && idx <= j) {
-        accu += curr;
-      }
-
-      return accu;
-    }, 0);
-  };
-
   let result = Infinity;
+  let left = 0;
+  let sum = 0;
   for (let i = 0; i < nums.length; i++) {
-    for (let j = i; j < nums.length; j++) {
-      if (getSumOfArrayBoundary(nums, i, j) >= s) {
-        result = Math.min(result, j - i + 1);
-        if (result === 1) {
-          break;
-        }
-      }
+    sum += nums[i];
+
+    while(sum >= s) {
+      result = Math.min(result, i - left + 1);
+      sum -= nums[left];
+      left++;
     }
   }
 
