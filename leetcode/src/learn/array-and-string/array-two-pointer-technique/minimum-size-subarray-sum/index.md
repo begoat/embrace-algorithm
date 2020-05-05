@@ -22,7 +22,7 @@ Explanation: the subarray [4,3] has the minimal length under the problem constra
 ```
 
 ### Process:
-- no idea right now
+- O(n ^ 3) 挂了
 
 ### Answer:
 
