@@ -3,7 +3,7 @@ import { assert } from 'chai';
 import { findMaxConsecutiveOnes } from './index';
 
 const testcase = [
-  [2324, true],
+  [[1,1,0,1,1,1], 3],
 ];
 
 describe('findMaxConsecutiveOnes', function() {

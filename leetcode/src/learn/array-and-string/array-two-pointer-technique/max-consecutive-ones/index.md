@@ -1,10 +1,10 @@
 ---
 date: "2020-04-30"
 title: "Max Consecutive Ones"
-timeSpent: 0
+timeSpent: 20
 ---
 
-## Max Consecutive Ones ( mins)
+## Max Consecutive Ones (20 mins)
 
 ### Question：
 
