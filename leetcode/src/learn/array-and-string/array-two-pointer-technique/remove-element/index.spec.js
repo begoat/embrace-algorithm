@@ -3,7 +3,10 @@ import { assert } from 'chai';
 import { removeElement } from './index';
 
 const testcase = [
-  [2324, true],
+  [[[3,2,2,3], 3], 2],
+  [[[0,1,2,2,3,0,4,2], 2], 5],
+  [[[2, 2, 3], 2], 1],
+  [[[0,4,4,0,4,4,4,0,2], 4], 4]
 ];
 
 describe('removeElement', function() {
@@ -14,7 +17,7 @@ describe('removeElement', function() {
   testcase.map(t => {
     const [param, result] = t;
     return it(param.toString(), () => {
-      assert.deepEqual(removeElement(param), result);
+      assert.deepEqual(removeElement(...param), result);
     });
   });
 });

@@ -1,7 +1,7 @@
 ---
 date: "2020-04-30"
 title: "Remove Element"
-timeSpent: 0
+timeSpent: 80
 ---
 
 ## Remove Element ( mins)
@@ -9,7 +9,7 @@ timeSpent: 0
 ### Question：
 
 ##### Description:
-* Given an array nums and a value val, remove all instances of that value in-place and return the new length.
+* Given an array nums and a value val, remove all instances of that value **in-place** and return the new length.
 
 * Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
 
@@ -56,6 +56,9 @@ It doesn't matter what values are set beyond the returned length.
   - one for iteration
   - one be placed in the end (always keep elements after second pointer is the target val)
     - if current iteration value if the target value, just swap it with second pointer
+- 实际做的时候还是遇到了一些问题了，这道题一共卡了80分钟。。。本来状态就不好，
+其中有一个判断条件是 右边指针--，需要一个while循环去减减，这样才服务和哦我们的想法
+  - 右边的指针代表：下一个要被替换的元素，在他右边的都是 === val的
 
 ### Answer:
 
