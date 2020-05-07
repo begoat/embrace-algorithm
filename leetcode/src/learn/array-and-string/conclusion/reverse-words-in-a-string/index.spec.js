@@ -3,7 +3,9 @@ import { assert } from 'chai';
 import { reverseWords } from './index';
 
 const testcase = [
-  [2324, true],
+  ['the sky is blue', 'blue is sky the'],
+  ['  hello world!  ', 'world! hello'],
+  ['a good   example', 'example good a'],
 ];
 
 describe('reverseWords', function() {

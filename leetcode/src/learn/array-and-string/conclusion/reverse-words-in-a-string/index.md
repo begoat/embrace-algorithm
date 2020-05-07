@@ -31,7 +31,7 @@ Explanation: You need to reduce multiple spaces between two words to a single sp
 ```
 
 ### Process:
-- placeholder
+- 从尾部开始迭代，两个索引指针（快慢）
 
 ### Answer:
 
