@@ -34,17 +34,31 @@ export const rotate = function(nums, k) {
   // }
   // return result;
 
-  let tmp = [];
-  for (let i = nums.length - validK; i < nums.length; i++) {
-    tmp.push(nums[i]);
-  }
+  // let tmp = [];
+  // for (let i = nums.length - validK; i < nums.length; i++) {
+  //   tmp.push(nums[i]);
+  // }
 
-  for (let i = nums.length - validK - 1; i >= 0; i--) {
-    nums[i + validK] = nums[i];
-  }
+  // for (let i = nums.length - validK - 1; i >= 0; i--) {
+  //   nums[i + validK] = nums[i];
+  // }
 
-  for (let i = 0; i < tmp.length; i++) {
-    nums[i] = tmp[i];
+  // for (let i = 0; i < tmp.length; i++) {
+  //   nums[i] = tmp[i];
+  // }
+
+  // return nums;
+  let count = 0;
+  for (let start = 0; count < nums.length; start++) { // O(n): one time move for each item
+    let current = start;
+    let prev = nums[current];
+    do {
+      current = (current + validK) % nums.length;
+      let tmp = nums[current];
+      nums[current] = prev;
+      prev = tmp;
+      count++;
+    } while(start !== current); // to check whether the current pointer go back to the origin index
   }
 
   return nums;
