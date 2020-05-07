@@ -22,7 +22,8 @@ Output: [1,3,3,1]
 ```
 
 ### Process:
-- placeholder
+- 不知道怎么去更好的优化它
+- 写的时候走点心，用点脑子，别想着老是debug，要人脑debug
 
 ### Answer:
 

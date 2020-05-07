@@ -3,7 +3,8 @@ import { assert } from 'chai';
 import { getRow } from './index';
 
 const testcase = [
-  [2324, true],
+  [3, [1,3,3,1]],
+  [4, [1,4,6,4,1]],
 ];
 
 describe('getRow', function() {
