@@ -1,10 +1,10 @@
 ---
 date: "2020-05-07"
 title: "Remove Duplicates from Sorted Array"
-timeSpent: 0
+timeSpent: 15
 ---
 
-## Remove Duplicates from Sorted Array ( mins)
+## Remove Duplicates from Sorted Array (15 mins)
 
 ### Question：
 
