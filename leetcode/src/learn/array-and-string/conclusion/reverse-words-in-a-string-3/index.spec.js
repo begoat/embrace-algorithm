@@ -3,7 +3,7 @@ import { assert } from 'chai';
 import { reverseWords } from './index';
 
 const testcase = [
-  [2324, true],
+  ['Let\'s take LeetCode contest', 's\'teL ekat edoCteeL tsetnoc'],
 ];
 
 describe('reverseWords', function() {
