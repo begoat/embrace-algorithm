@@ -43,7 +43,8 @@ It doesn't matter what values are set beyond the returned length.
 ```
 
 ### Process:
-- placeholder
+- 说说直觉
+  - sorted array 第一感觉就是binary search
 
 ### Answer:
 
