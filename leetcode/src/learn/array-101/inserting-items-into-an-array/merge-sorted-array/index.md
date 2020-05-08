@@ -25,7 +25,7 @@ Output: [1,2,2,3,5,6]
 ```
 
 ### Process:
-- placeholder
+- 做题目全靠猜，全靠直接执行测试
 
 ### Answer:
 
