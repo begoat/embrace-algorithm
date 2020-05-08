@@ -3,7 +3,8 @@ import { assert } from 'chai';
 import { duplicateZeros } from './index';
 
 const testcase = [
-  [2324, true],
+  [[1,0,2,3,0,4,5,0], [1,0,0,2,3,0,0,4]],
+  [[1,2,3], [1,2,3]]
 ];
 
 describe('duplicateZeros', function() {
