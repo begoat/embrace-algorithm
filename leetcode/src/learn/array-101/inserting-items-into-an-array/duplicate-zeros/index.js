@@ -3,10 +3,9 @@
  * @return {void} Do not return anything, modify arr in-place instead.
  */
 export const duplicateZeros = function(arr) {
-  let zeroCounts = 0;
+  const originArrayLen = arr.length;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === 0) {
-      zeroCounts++;
       for (let j = arr.length - 2; j > i; j--) {
         arr[j + 1] = arr[j];
       }
@@ -15,6 +14,8 @@ export const duplicateZeros = function(arr) {
       i++;
     }
   }
+
+  arr.length = originArrayLen;
 
   return arr;
 };

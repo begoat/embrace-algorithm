@@ -4,7 +4,8 @@ import { duplicateZeros } from './index';
 
 const testcase = [
   [[1,0,2,3,0,4,5,0], [1,0,0,2,3,0,0,4]],
-  [[1,2,3], [1,2,3]]
+  [[1,2,3], [1,2,3]],
+  [[0,0,0,0,0,0,0], [0,0,0,0,0,0,0]]
 ];
 
 describe('duplicateZeros', function() {
