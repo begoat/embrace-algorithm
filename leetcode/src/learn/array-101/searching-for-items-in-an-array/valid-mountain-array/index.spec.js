@@ -3,7 +3,9 @@ import { assert } from 'chai';
 import { validMountainArray } from './index';
 
 const testcase = [
-  [2324, true],
+  [[2,1], false],
+  [[3,5,5], false],
+  [[0,3,2,1], true],
 ];
 
 describe('validMountainArray', function() {
