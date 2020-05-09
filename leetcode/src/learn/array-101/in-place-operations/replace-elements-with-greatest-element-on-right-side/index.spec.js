@@ -3,7 +3,7 @@ import { assert } from 'chai';
 import { replaceElements } from './index';
 
 const testcase = [
-  [2324, true],
+  [[17,18,5,4,6,1], [18,6,6,6,1,-1]],
 ];
 
 describe('replaceElements', function() {

@@ -1,10 +1,10 @@
 ---
 date: "2020-05-09"
 title: "Squares of a Sorted Array"
-timeSpent: 0
+timeSpent: 10
 ---
 
-## Squares of a Sorted Array ( mins)
+## Squares of a Sorted Array (10 mins)
 
 ### Question：
 
