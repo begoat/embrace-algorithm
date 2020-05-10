@@ -3,7 +3,9 @@ import { assert } from 'chai';
 import { heightChecker } from './index';
 
 const testcase = [
-  [2324, true],
+  [[1,1,4,2,1,3], 3],
+  [[5,1,2,3,4], 5],
+  [[1,2,3,4,5], 0]
 ];
 
 describe('heightChecker', function() {

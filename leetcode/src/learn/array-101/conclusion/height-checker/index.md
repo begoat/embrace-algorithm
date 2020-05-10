@@ -1,10 +1,10 @@
 ---
 date: "2020-05-09"
 title: "Height Checker"
-timeSpent: 0
+timeSpent: 10
 ---
 
-## Height Checker ( mins)
+## Height Checker (10 mins)
 
 ### Question：
 
@@ -36,7 +36,10 @@ Output: 0
 ```
 
 ### Process:
-- placeholder
+- 这道题主要是理解题意
+  - 哪些学生是不要懂的
+- 一个排序一个对比
+- 一个insertion sort 就可以走天下了
 
 ### Answer:
 
