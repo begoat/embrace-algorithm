@@ -1,10 +1,10 @@
 ---
 date: "2020-05-09"
 title: "Squares of a Sorted Array"
-timeSpent: 10
+timeSpent: 40
 ---
 
-## Squares of a Sorted Array (10 mins)
+## Squares of a Sorted Array (40 mins)
 
 ### Question：
 
@@ -26,7 +26,9 @@ Output: [4,9,9,49,121]
 ```
 
 ### Process:
-- placeholder
+- 找到交界点，0左边的元素的边界i
+  - 所有的都平方，然后把刚刚i左边的元素都插到右边
+  - 一开始想是想这么做的，后来自己太菜了，所以直接平方后，排序好了
 
 ### Answer:
 
