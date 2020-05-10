@@ -1,10 +1,10 @@
 ---
 date: "2020-05-09"
 title: "Sort Array By Parity"
-timeSpent: 0
+timeSpent: 20
 ---
 
-## Sort Array By Parity ( mins)
+## Sort Array By Parity (20 mins)
 
 ### Question：
 
@@ -24,7 +24,9 @@ The outputs [4,2,3,1], [2,4,1,3], and [4,2,1,3] would also be accepted.
 ```
 
 ### Process:
-- placeholder
+- we need two pointer
+  - one to do the main loop
+  - the other is to records the position of the end of the element in origin array
 
 ### Answer:
 

@@ -3,7 +3,7 @@ import { assert } from 'chai';
 import { sortArrayByParity } from './index';
 
 const testcase = [
-  [2324, true],
+  [[3,1,2,4], 10],
 ];
 
 describe('sortArrayByParity', function() {
