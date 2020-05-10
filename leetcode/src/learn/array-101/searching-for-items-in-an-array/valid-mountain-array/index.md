@@ -1,10 +1,10 @@
 ---
 date: "2020-05-09"
 title: "validMountainArray"
-timeSpent: 0
+timeSpent: 10
 ---
 
-## validMountainArray ( mins)
+## validMountainArray (10 mins)
 
 ### Question：
 
