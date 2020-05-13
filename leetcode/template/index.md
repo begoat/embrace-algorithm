@@ -5,6 +5,7 @@ timeSpent: 0
 qIdx: 0
 wrongTime: 0
 withHelp: false
+conquered: false
 ---
 
 ## Q_DESC_TITLE

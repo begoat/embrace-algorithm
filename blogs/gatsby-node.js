@@ -33,6 +33,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
       }
     }
   `);
+
   const posts = _.get(results, 'data.allMarkdownRemark.edges', []);
   posts.forEach(post => {
     const { slug } = post.node.fields;
@@ -59,3 +60,23 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     })
   }
 };
+
+// https://www.gatsbyjs.org/docs/schema-customization/#creating-type-definitions
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = `
+    type MarkdownRemark implements Node {
+      frontmatter: Frontmatter
+    }
+    type Frontmatter {
+      title: String
+      timeSpent: Int
+      qIdx: Int
+      date: String
+      wrongTime: Int
+      conquered: Boolean
+      withHelp: Boolean
+    }
+  `
+  createTypes(typeDefs);
+}
