@@ -22,6 +22,9 @@ module.exports = {
     'import/resolver': {
       "webpack": {
         "config": "./webpack.custom.js"
+      },
+      node: {
+        extensions: ['.js','.jsx','.ts', '.tsx', '.d.ts']
       }
     },
   },
