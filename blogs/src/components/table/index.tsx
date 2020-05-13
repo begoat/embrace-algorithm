@@ -1,0 +1,1 @@
+export { CheckCell } from './checkcell';

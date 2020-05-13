@@ -3,6 +3,8 @@ import _ from 'lodash';
 import { graphql, Link } from 'gatsby';
 import { Table } from 'rsuite';
 
+import { CheckCell } from '@/components/table';
+
 import './blog-index.less';
 
 const { Column, HeaderCell, Cell } = Table;
@@ -54,14 +56,14 @@ export const BlogIndexTmpl = ({ data }: any) => {
         <Cell dataKey="index" />
       </Column>
 
-      <Column width={110} sortable>
+      <Column width={100} sortable>
         <HeaderCell>Conquered</HeaderCell>
-        <Cell dataKey="conquered" />
+        <CheckCell dataKey="conquered" />
       </Column>
 
       <Column width={110} sortable>
         <HeaderCell>withHelp</HeaderCell>
-        <Cell dataKey="withHelp" />
+        <CheckCell dataKey="withHelp" />
       </Column>
 
       <Column minWidth={250} flexGrow={1} sortable>
