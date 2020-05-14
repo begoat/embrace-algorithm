@@ -1,13 +1,12 @@
 import React from 'react';
 import _ from 'lodash';
-import { graphql, Link } from 'gatsby';
 import { Table } from 'rsuite';
+import { graphql, Link } from 'gatsby';
 
-import { CheckCell } from '@/components/table';
+import { CheckCell, HeaderCell, Column, Cell } from '@/components/table';
 
 import './blog-index.less';
 
-const { Column, HeaderCell, Cell } = Table;
 const whiteListSlug = '/template/';
 
 export const BlogIndexTmpl = ({ data }: any) => {
@@ -71,23 +70,23 @@ export const BlogIndexTmpl = ({ data }: any) => {
         <Cell dataKey="title" />
       </Column>
 
-      <Column width={200} sortable>
+      <Column width={106} sortable align='center'>
         <HeaderCell>Date</HeaderCell>
         <Cell dataKey="date" />
       </Column>
 
-      <Column width={120} sortable>
+      <Column width={100} align='center' sortable>
         <HeaderCell>TimeSpent</HeaderCell>
         <Cell dataKey="timeSpent" />
       </Column>
 
-      <Column width={140} sortable>
+      <Column width={100} sortable align='center'>
         <HeaderCell>wrongTime</HeaderCell>
         <Cell dataKey="wrongTime" />
       </Column>
 
-      <Column width={124} sortable align='center'>
-        <HeaderCell>QuestionUrl</HeaderCell>
+      <Column width={70} sortable align='center'>
+        <HeaderCell>URL</HeaderCell>
         <Cell>
           {(rowData: any) => {
             const slug = _.get(rowData, 'url');

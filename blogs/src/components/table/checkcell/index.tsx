@@ -1,24 +1,22 @@
 import React from 'react';
 import _ from 'lodash';
-import { Table, Checkbox } from 'rsuite';
-import { TableCellProps } from 'rsuite/lib/Table/TableCell';
+import { Checkbox } from 'rsuite';
 import { CheckboxProps } from 'rsuite/lib/Checkbox';
+import { BaseCell as Cell, BaseCellProps } from '../basecell';
 
-const { Cell } = Table;
-
-interface CheckCellProps extends TableCellProps {
-  dataKey: string;
+interface CheckCellProps extends BaseCellProps {
   checkboxProps?: CheckboxProps;
 }
 
 export const CheckCell = ({
+  dataKey = '',
+  rowData,
   checkboxProps,
   ...props
 }: CheckCellProps) => {
-  const { dataKey, rowData } = props;
   const isChecked = _.get(rowData, dataKey, false);
   return (
-    <Cell {...props}>
+    <Cell dataKey={dataKey} rowData={rowData} {...props}>
       <Checkbox checked={isChecked} {...checkboxProps}>
         {isChecked ? '是' : '否'}
       </Checkbox>
