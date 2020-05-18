@@ -11,7 +11,7 @@ interface CustomAutoCompleteProps extends AutoCompleteProps {
 
 const simpleIncludeSearch = (val: string, iterObj: any, fields: Array<string>) => {
   return _.some(fields, f => {
-    if (_.includes(iterObj[f], val)) {
+    if (_.includes(String(iterObj[f]), val)) {
       return true;
     }
 
@@ -19,6 +19,7 @@ const simpleIncludeSearch = (val: string, iterObj: any, fields: Array<string>) =
   });
 };
 
+const defaultFilterBy = () => true;
 export const CustomAutoComplete = ({
   dataSource,
   sourceKeys = [],
@@ -29,25 +30,25 @@ export const CustomAutoComplete = ({
   const sourceNotEmpty = !_.isEmpty(sourceKeys) && !_.isEmpty(dataSource);
   const data: Array<string> = useMemo(() => {
     if (sourceNotEmpty && value !== '') {
-      return _.reduce(dataSource, (accu, curr) => {
+      return _.uniq(_.reduce(dataSource, (accu, curr) => {
         if (simpleIncludeSearch(value, curr, sourceKeys)) {
           accu = curr[valueKey] ? [...accu, curr[valueKey]] : accu;
           return accu;
         }
 
         return accu;
-      }, [] as Array<string>);
+      }, [] as Array<string>));
     }
 
     return [];
   }, [sourceNotEmpty, dataSource, sourceKeys, value, valueKey]);
 
-  console.log('data', data);
-
   return (
     <AutoComplete
+      menuClassName="custom-autocomplete-menu"
       data={data}
       value={value}
+      filterBy={defaultFilterBy}
       {...rest}
     />
   );

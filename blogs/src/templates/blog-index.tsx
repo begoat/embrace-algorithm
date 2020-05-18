@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import _ from 'lodash';
 import { graphql, Link } from 'gatsby';
 
@@ -13,9 +13,8 @@ const whiteListSlug = '/template/';
 const sourceKeys = ['title', 'date', 'qIdx', 'url'];
 export const BlogIndexTmpl = ({ data }: any) => {
   const [searchInput, setSearchInput] = useState('');
-  const blogs = _.get(data, 'allMarkdownRemark.edges', []);
-  console.log('blogs', blogs);
-  const tableData = _.map(blogs, d => {
+  const blogs = useMemo(() => _.get(data, 'allMarkdownRemark.edges', []), [data]);
+  const tableData = useMemo(() => _.map(blogs, d => {
     const slug = _.get(d, 'node.fields.slug', '');
     const frontMatter = _.get(d, 'node.frontmatter', {}) || {};
     const { title, date, qIdx, timeSpent, conquered, withHelp, wrongTime } = frontMatter;
@@ -30,12 +29,10 @@ export const BlogIndexTmpl = ({ data }: any) => {
       wrongTime,
       withHelp
     };
-  }).filter(s =>
-    s.url && whiteListSlug.indexOf(s.url) === -1 && s.url.indexOf('README') === -1
-  ).map((ss, idx) => ({
+  }).filter(s => s.url && whiteListSlug.indexOf(s.url) === -1 && s.url.indexOf('README') === -1).map((ss, idx) => ({
     ...ss,
     index: idx + 1,
-  }));
+  })), [blogs]);
 
   console.log('tableData', tableData);
   return (
