@@ -41,3 +41,5 @@ export const QWithHelpFilter = [
     value: QWithHelp.ALL,
   },
 ];
+
+export const LOCAL_MOCK_RESP_TIME = 1200;

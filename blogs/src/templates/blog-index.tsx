@@ -6,13 +6,40 @@ import { CheckCell, HeaderCell, Column, Cell, Table } from '@/components/table';
 import { QStatusFilter, QStatus, QWithHelpFilter, QWithHelp } from '@/constants';
 import { SelectPicker } from '@/components/picker';
 import { AutoComplete } from '@/components/input';
+import { useSearch } from '@/utils/hooks';
 
 import './blog-index.less';
 
 const whiteListSlug = '/template/';
 const sourceKeys = ['title', 'date', 'qIdx', 'url'];
+const searchMapFn = (value: string) => (o: any) => o.title.indexOf(value.trim()) !== -1;
+const qStatusMapFn = (value: QStatus) => (o: any) => {
+  if (value === QStatus.DONE) {
+    return o.conquered;
+  }
+
+  if (value === QStatus.TODO) {
+    return !o.conquered;
+  }
+
+  return true;
+};
+const qWithHelpMapFn = (value: QWithHelp) => (o: any) => {
+  if (value === QWithHelp.YES) {
+    return o.withHelp;
+  }
+
+  if (value === QWithHelp.NO) {
+    return !o.withHelp;
+  }
+
+  return true;
+};
+
 export const BlogIndexTmpl = ({ data }: any) => {
   const [searchInput, setSearchInput] = useState('');
+  const [qStatusVal, setQStatusVal] = useState(QStatus.ALL);
+  const [qWithHelpVal, setQWithHelpVal] = useState(QWithHelp.ALL);
   const blogs = useMemo(() => _.get(data, 'allMarkdownRemark.edges', []), [data]);
   const tableData = useMemo(() => _.map(blogs, d => {
     const slug = _.get(d, 'node.fields.slug', '');
@@ -34,35 +61,60 @@ export const BlogIndexTmpl = ({ data }: any) => {
     index: idx + 1,
   })), [blogs]);
 
+  const sourceBindingMemo = useMemo(() => {
+    return [
+      {
+        value: searchInput,
+        mapFn: searchMapFn,
+      },
+      {
+        value: qStatusVal,
+        mapFn: qStatusMapFn,
+      },
+      {
+        value: qWithHelpVal,
+        mapFn: qWithHelpMapFn,
+      },
+    ];
+  }, [searchInput, qStatusVal, qWithHelpVal]);
+  const { data: tableSearchData, loading: tableSearchLoading } = useSearch(tableData, sourceBindingMemo);
+
+
   console.log('tableData', tableData);
   return (
     <>
-      <SelectPicker
-        data={QStatusFilter}
-        value={QStatus.ALL}
-        cleanable={false}
-        searchable={false}
-        style={{minWidth: 100}}
-        prependLabel="完成状态："
-      />
-      <SelectPicker
-        data={QWithHelpFilter}
-        value={QWithHelp.ALL}
-        cleanable={false}
-        searchable={false}
-        style={{minWidth: 100}}
-        prependLabel="完成情况："
-      />
-      <AutoComplete
-        sourceKeys={sourceKeys}
-        dataSource={tableData}
-        valueKey='title'
-        value={searchInput}
-        onChange={setSearchInput}
-      />
+      <div className="custom-toolbar">
+        <SelectPicker
+          data={QStatusFilter}
+          value={qStatusVal}
+          onChange={setQStatusVal}
+          cleanable={false}
+          searchable={false}
+          style={{minWidth: 100}}
+          prependLabel="完成状态："
+        />
+        <SelectPicker
+          data={QWithHelpFilter}
+          value={qWithHelpVal}
+          onChange={setQWithHelpVal}
+          cleanable={false}
+          searchable={false}
+          style={{minWidth: 100}}
+          prependLabel="完成情况："
+        />
+        <AutoComplete
+          sourceKeys={sourceKeys}
+          dataSource={tableData}
+          valueKey='title'
+          value={searchInput}
+          onChange={setSearchInput}
+          placeholder={`输入题目的${sourceKeys}进行搜索`}
+          style={{width: 300, display: 'inline-block'}}
+        />
+      </div>
       <Table
         height={420}
-        data={tableData}
+        data={tableSearchData}
         cellBordered
         autoHeight
         affixHeader
@@ -71,7 +123,7 @@ export const BlogIndexTmpl = ({ data }: any) => {
         // sortColumn={this.state.sortColumn}
         // sortType={this.state.sortType}
         // onSortColumn={this.handleSortColumn}
-        // loading={this.state.loading}
+        loading={tableSearchLoading}
       >
         <Column width={70} align="center" sortable>
           <HeaderCell>idx</HeaderCell>
