@@ -2,6 +2,7 @@
 date: "2020-04-30"
 title: "Max Consecutive Ones"
 timeSpent: 20
+qId: 485
 ---
 
 ## Max Consecutive Ones (20 mins)
