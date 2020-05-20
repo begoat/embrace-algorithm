@@ -26,7 +26,7 @@ const YYYYMMDD = () => {
 
 const exitProcess = (code = 1) => process.exit(code);
 
-const writeTmpl = (output, name, title, presetDataObj) => {
+const writeTmpl = (output, name, title, qId, presetDataObj) => {
   if (output) {
     output = `./src/${output}`;
     console.log("writting template in", output);
@@ -52,6 +52,7 @@ const writeTmpl = (output, name, title, presetDataObj) => {
         (newData || data)
           .replace(/demo/g, name)
           .replace(/Q_DESC_TITLE/g, title)
+          .replace(/Q_ID/g, qId)
           .replace("YYYY-MM-DD", YYYYMMDD()),
         { encoding }
       );
@@ -115,7 +116,8 @@ const htmlToMarkdown = htmlContent => {
     result = {
       content: data.content,
       title: data.questionTitle,
-      codeTemplate: data.codeDefinition
+      codeTemplate: data.codeDefinition,
+      qId: data.questionId,
     };
   } else if (!name || name.match(/^[a-zA-Z][0-9A-Za-z]+/) === null) {
     console.error("valid Name should be supplied when -auto flag is absent");
@@ -125,7 +127,7 @@ const htmlToMarkdown = htmlContent => {
 
   const { funcName, code } =
     getCodeFromTemplateList(result && result.codeTemplate) || {};
-  writeTmpl(output, funcName || name, title, {
+  writeTmpl(output, funcName || name, title, result && result.qId,{
     [fileList[0]]: code,
     [fileList[1]]: htmlToMarkdown(result && result.content)
   });
