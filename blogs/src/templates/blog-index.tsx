@@ -12,7 +12,7 @@ import { useSearch } from '@/utils/hooks';
 import './blog-index.less';
 
 const whiteListSlug = '/template/';
-const sourceKeys = ['title', 'date', 'qIdx', 'url'];
+const sourceKeys = ['title', 'date', 'qId', 'url'];
 const searchMapFn = (value: string) => (o: any) => o.title.indexOf(value.trim()) !== -1;
 const qStatusMapFn = (value: QStatus) => (o: any) => {
   if (value === QStatus.DONE) {
@@ -45,13 +45,13 @@ export const BlogIndexTmpl = ({ data }: any) => {
   const tableData = useMemo(() => _.map(blogs, d => {
     const slug = _.get(d, 'node.fields.slug', '');
     const frontMatter = _.get(d, 'node.frontmatter', {}) || {};
-    const { title, date, qIdx, timeSpent, conquered, withHelp, wrongTime } = frontMatter;
+    const { title, date, qId, timeSpent, conquered, withHelp, wrongTime } = frontMatter;
 
     return {
       url: slug,
       title: title || '',
       date: dayjs(date).toDate().getTime(),
-      qIdx,
+      qId: qId || 0,
       timeSpent: timeSpent || 0,
       conquered: conquered || false,
       wrongTime: wrongTime || 0,
@@ -105,6 +105,7 @@ export const BlogIndexTmpl = ({ data }: any) => {
           style={{minWidth: 100}}
           prependLabel="完成情况："
         />
+        {/** FIXME: no need to use this component */}
         <AutoComplete
           sourceKeys={sourceKeys}
           dataSource={tableData}
@@ -159,13 +160,26 @@ export const BlogIndexTmpl = ({ data }: any) => {
           <Cell dataKey="wrongTime" />
         </Column>
 
-        <Column width={70} sortable align='center'>
-          <HeaderCell>URL</HeaderCell>
+        <Column width={140} sortable align='center'>
+          <HeaderCell>题解</HeaderCell>
           <Cell>
             {(rowData: any) => {
               const slug = _.get(rowData, 'url');
               return (
-                <Link to={slug}>跳转</Link>
+                <Link to={slug}>题解跳转</Link>
+              );
+            }}
+          </Cell>
+        </Column>
+        <Column width={140} sortable align='center'>
+          <HeaderCell>原题</HeaderCell>
+          <Cell>
+            {(rowData: any) => {
+              const slug = _.get(rowData, 'url');
+              console.log('slug', slug);
+              const qLink = slug.split('/')[slug.split('/').length + (slug.slice(-1) === '/' ? -2 : -1)];
+              return (
+                <a target="_blank" rel="noopener noreferrer" href={`https://leetcode.com/problems/${qLink}`}>原题跳转</a>
               );
             }}
           </Cell>
@@ -191,7 +205,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             timeSpent
-            qIdx
+            qId
             date
             conquered
             wrongTime

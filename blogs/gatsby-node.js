@@ -71,7 +71,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Frontmatter {
       title: String
       timeSpent: Int
-      qIdx: Int
+      qId: Int
       date: String
       wrongTime: Int
       conquered: Boolean
