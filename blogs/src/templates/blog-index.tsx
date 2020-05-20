@@ -77,8 +77,7 @@ export const BlogIndexTmpl = ({ data }: any) => {
       },
     ];
   }, [searchInput, qStatusVal, qWithHelpVal]);
-  const { data: tableSearchData, loading: tableSearchLoading } = useSearch(tableData, sourceBindingMemo);
-
+  const searchResult = useSearch(tableData, sourceBindingMemo, 'date', 'desc');
 
   console.log('tableData', tableData);
   return (
@@ -114,16 +113,12 @@ export const BlogIndexTmpl = ({ data }: any) => {
       </div>
       <Table
         height={420}
-        data={tableSearchData}
         cellBordered
         autoHeight
         affixHeader
         affixHorizontalScrollbar
         bordered
-        // sortColumn={this.state.sortColumn}
-        // sortType={this.state.sortType}
-        // onSortColumn={this.handleSortColumn}
-        loading={tableSearchLoading}
+        {...searchResult}
       >
         <Column width={70} align="center" sortable>
           <HeaderCell>idx</HeaderCell>
