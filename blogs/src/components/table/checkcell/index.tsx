@@ -8,6 +8,12 @@ interface CheckCellProps extends BaseCellProps {
   checkboxProps?: CheckboxProps;
 }
 
+const CheckCellStyles = {
+  padding: "0 10px",
+  display: "inline-flex",
+  alignItems: "center",
+}
+
 export const CheckCell = ({
   dataKey = '',
   rowData,
@@ -16,7 +22,7 @@ export const CheckCell = ({
 }: CheckCellProps) => {
   const isChecked = _.get(rowData, dataKey, false);
   return (
-    <Cell dataKey={dataKey} rowData={rowData} {...props}>
+    <Cell dataKey={dataKey} rowData={rowData} style={CheckCellStyles} {...props}>
       <Checkbox checked={isChecked} {...checkboxProps}>
         {isChecked ? '是' : '否'}
       </Checkbox>
