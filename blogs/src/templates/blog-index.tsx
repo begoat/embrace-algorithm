@@ -48,18 +48,21 @@ export const BlogIndexTmpl = ({ data }: any) => {
 
     return {
       url: slug,
-      title,
+      title: title || '',
       date,
       qIdx,
-      timeSpent,
-      conquered,
-      wrongTime,
-      withHelp
+      timeSpent: timeSpent || 0,
+      conquered: conquered || false,
+      wrongTime: wrongTime || 0,
+      withHelp: withHelp || false
     };
-  }).filter(s => s.url && whiteListSlug.indexOf(s.url) === -1 && s.url.indexOf('README') === -1).map((ss, idx) => ({
-    ...ss,
-    index: idx + 1,
-  })), [blogs]);
+  })
+    .filter(s => s.url && whiteListSlug.indexOf(s.url) === -1 && s.url.indexOf('README') === -1)
+    .filter(s => s.title)
+    .map((ss, idx) => ({
+      ...ss,
+      index: idx + 1,
+    })), [blogs]);
 
   const sourceBindingMemo = useMemo(() => {
     return [
@@ -79,7 +82,7 @@ export const BlogIndexTmpl = ({ data }: any) => {
   }, [searchInput, qStatusVal, qWithHelpVal]);
   const searchResult = useSearch(tableData, sourceBindingMemo, 'date', 'desc');
 
-  console.log('tableData', tableData);
+  console.log('tableData', searchResult.data);
   return (
     <>
       <div className="custom-toolbar">
