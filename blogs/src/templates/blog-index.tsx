@@ -1,8 +1,9 @@
 import React, { useState, useMemo } from 'react';
 import _ from 'lodash';
 import { graphql, Link } from 'gatsby';
+import dayjs from 'dayjs';
 
-import { CheckCell, HeaderCell, Column, Cell, Table } from '@/components/table';
+import { CheckCell, DateCell, HeaderCell, Column, Cell, Table } from '@/components/table';
 import { QStatusFilter, QStatus, QWithHelpFilter, QWithHelp } from '@/constants';
 import { SelectPicker } from '@/components/picker';
 import { AutoComplete } from '@/components/input';
@@ -49,7 +50,7 @@ export const BlogIndexTmpl = ({ data }: any) => {
     return {
       url: slug,
       title: title || '',
-      date,
+      date: dayjs(date).toDate().getTime(),
       qIdx,
       timeSpent: timeSpent || 0,
       conquered: conquered || false,
@@ -145,7 +146,7 @@ export const BlogIndexTmpl = ({ data }: any) => {
 
         <Column width={106} sortable align='center'>
           <HeaderCell>Date</HeaderCell>
-          <Cell dataKey="date" />
+          <DateCell dataKey="date" />
         </Column>
 
         <Column width={100} align='center' sortable>
