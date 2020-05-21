@@ -46,11 +46,12 @@ export const BlogIndexTmpl = ({ data }: any) => {
     const slug = _.get(d, 'node.fields.slug', '');
     const frontMatter = _.get(d, 'node.frontmatter', {}) || {};
     const { title, date, qId, timeSpent, conquered, withHelp, wrongTime } = frontMatter;
+    const dayjsObj = dayjs(date);
 
     return {
       url: slug,
       title: title || '',
-      date: dayjs(date).toDate().getTime(),
+      date: dayjsObj.isValid() ? dayjsObj.toDate().getTime() : 0,
       qId: qId || 0,
       timeSpent: timeSpent || 0,
       conquered: conquered || false,
