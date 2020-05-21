@@ -1,7 +1,7 @@
 {
   "name": "embrace-algorithm",
   "description": "",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "William Huang",
   "dependencies": {
     "dayjs": "^1.8.27",
