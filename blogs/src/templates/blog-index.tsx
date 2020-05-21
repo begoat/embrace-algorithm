@@ -50,7 +50,7 @@ export const BlogIndexTmpl = ({ data }: any) => {
 
     return {
       url: slug,
-      title: title || '',
+      title: (title && title.trim()) || '',
       date: dayjsObj.isValid() ? dayjsObj.toDate().getTime() : 0,
       qId: qId || 0,
       timeSpent: timeSpent || 0,
@@ -177,7 +177,6 @@ export const BlogIndexTmpl = ({ data }: any) => {
           <Cell>
             {(rowData: any) => {
               const slug = _.get(rowData, 'url');
-              console.log('slug', slug);
               const qLink = slug.split('/')[slug.split('/').length + (slug.slice(-1) === '/' ? -2 : -1)];
               return (
                 <a target="_blank" rel="noopener noreferrer" href={`https://leetcode.com/problems/${qLink}`}>原题跳转</a>
