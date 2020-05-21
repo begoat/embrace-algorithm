@@ -161,7 +161,7 @@ export const BlogIndexTmpl = ({ data }: any) => {
           <Cell dataKey="wrongTime" />
         </Column>
 
-        <Column width={140} sortable align='center'>
+        <Column width={100} sortable align='center'>
           <HeaderCell>题解</HeaderCell>
           <Cell>
             {(rowData: any) => {
@@ -172,7 +172,7 @@ export const BlogIndexTmpl = ({ data }: any) => {
             }}
           </Cell>
         </Column>
-        <Column width={140} sortable align='center'>
+        <Column width={100} sortable align='center'>
           <HeaderCell>原题</HeaderCell>
           <Cell>
             {(rowData: any) => {
