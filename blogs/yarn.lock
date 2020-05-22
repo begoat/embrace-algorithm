@@ -11259,10 +11259,10 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
-rsuite-table@^3.12.1:
-  version "3.12.1"
-  resolved "https://registry.npm.taobao.org/rsuite-table/download/rsuite-table-3.12.1.tgz#a1b2773087fa187bed900fd1298ff52e5089b18e"
-  integrity sha1-obJ3MIf6GHvtkA/RKY/1LlCJsY4=
+rsuite-table@^3.13.1:
+  version "3.13.1"
+  resolved "https://registry.yarnpkg.com/rsuite-table/-/rsuite-table-3.13.1.tgz#d74c6110f1f0fa46f0bd61656b85193b4cfe5704"
+  integrity sha512-wQJ1wtMMq5fVOYSR8mY7F1ZmjJ4MDYbb7HRCFPIgUxweov/kC5MF5qTUDwkMovxoz7Lla7jLAmGiPAYGj9TAUQ==
   dependencies:
     "@babel/runtime" "^7.8.4"
     classnames "^2.2.5"
@@ -11270,10 +11270,10 @@ rsuite-table@^3.12.1:
     element-resize-event "^3.0.2"
     lodash "^4.17.5"
 
-rsuite@^4.5.0:
-  version "4.5.0"
-  resolved "https://registry.npm.taobao.org/rsuite/download/rsuite-4.5.0.tgz#1a9556660c6b94cf339fc50166bf4762f30fcc4d"
-  integrity sha1-GpVWZgxrlM8zn8UBZr9HYvMPzE0=
+rsuite@^4.7.0:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/rsuite/-/rsuite-4.7.0.tgz#3adda942d0dcf4f38b1960fb954261e3589b67e3"
+  integrity sha512-d5Ct6bg4NN4yBbV6zqQbwuJ4Gn7rVSn4shKFqi5x42np4/lF2eBbZXio/EwmX+SZOb4QHWodRkNvhxBl+WNPuQ==
   dependencies:
     "@babel/runtime" "^7.8.4"
     classnames ">=2.0.0"
@@ -11285,7 +11285,7 @@ rsuite@^4.5.0:
     react-lifecycles-compat "^3.0.4"
     react-virtualized "^9.21.0"
     recompose "^0.30.0"
-    rsuite-table "^3.12.1"
+    rsuite-table "^3.13.1"
     schema-typed "^1.5.1"
 
 run-async@^2.2.0, run-async@^2.4.0:
