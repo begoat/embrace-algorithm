@@ -7,6 +7,7 @@ interface CustomAutoCompleteProps extends AutoCompleteProps {
   dataSource?: Array<any>;
   sourceKeys?: Array<string>;
   valueKey?: string;
+  dataMapper?: (d: any) => any;
 }
 
 const simpleIncludeSearch = (val: string, iterObj: any, fields: Array<string>) => {
@@ -25,12 +26,14 @@ export const CustomAutoComplete = ({
   sourceKeys = [],
   valueKey = '',
   value = '',
+  dataMapper,
   ...rest
 }: CustomAutoCompleteProps) => {
   const sourceNotEmpty = !_.isEmpty(sourceKeys) && !_.isEmpty(dataSource);
   const data: Array<string> = useMemo(() => {
     if (sourceNotEmpty && value !== '') {
       return _.uniq(_.reduce(dataSource, (accu, curr) => {
+        curr = _.isFunction(dataMapper) ? dataMapper(curr) : curr;
         if (simpleIncludeSearch(value, curr, sourceKeys)) {
           accu = curr[valueKey] ? [...accu, curr[valueKey]] : accu;
           return accu;
@@ -41,7 +44,7 @@ export const CustomAutoComplete = ({
     }
 
     return [];
-  }, [sourceNotEmpty, dataSource, sourceKeys, value, valueKey]);
+  }, [sourceNotEmpty, dataMapper, dataSource, sourceKeys, value, valueKey]);
 
   return (
     <AutoComplete

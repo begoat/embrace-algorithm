@@ -37,6 +37,14 @@ const qWithHelpMapFn = (value: QWithHelp) => (o: any) => {
   return true;
 };
 
+const tableDataAutoCompleteMapper = (dataItem: any) => {
+  const dateTimeStamp = dataItem.date;
+  return {
+    ...dataItem,
+    date: dayjs(dateTimeStamp).format('YYYY-MM-DD')
+  };
+};
+
 export const BlogIndexTmpl = ({ data }: any) => {
   const [searchInput, setSearchInput] = useState('');
   const [qStatusVal, setQStatusVal] = useState(QStatus.ALL);
@@ -114,6 +122,7 @@ export const BlogIndexTmpl = ({ data }: any) => {
           value={searchInput}
           onChange={setSearchInput}
           placeholder={`输入题目的${sourceKeys}进行搜索`}
+          dataMapper={tableDataAutoCompleteMapper}
           style={{width: 300, display: 'inline-block'}}
         />
       </div>
