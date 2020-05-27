@@ -7,7 +7,6 @@ export var MyCircularQueue = function(k) {
   this.fixedNum = k;
   this.pFirst = -1;
   this.pLast = -1;
-  this.eleNum = 0;
 };
 
 MyCircularQueue.prototype.calcIdx = function(targetidx) {
@@ -24,14 +23,12 @@ MyCircularQueue.prototype.enQueue = function(value) {
     this.pFirst = 0;
     this.pLast = 0;
     this.listStorage[this.pFirst] = value;
-    this.eleNum++;
     return true;
   } else if (this.isFull()) {
     return false;
   } else {
     this.pLast = this.calcIdx(this.pLast + 1);
     this.listStorage[this.pLast] = value;
-    this.eleNum++;
     return true;
   }
 };
@@ -43,9 +40,12 @@ MyCircularQueue.prototype.enQueue = function(value) {
 MyCircularQueue.prototype.deQueue = function() {
   if (this.isEmpty()) {
     return false;
+  } else if (this.pFirst === this.pLast) { // only one elements
+    this.pFirst = -1;
+    this.pLast = -1;
+    return true;
   } else {
     this.pFirst = this.calcIdx(this.pFirst + 1);
-    this.eleNum--;
     return true;
   }
 };
@@ -83,10 +83,6 @@ MyCircularQueue.prototype.isEmpty = function() {
     return true;
   }
 
-  if (this.calcIdx(this.pFirst) === (this.calcIdx(this.pLast + 1)) && !this.eleNum) {
-    return true;
-  }
-
   return false;
 };
 
@@ -95,11 +91,7 @@ MyCircularQueue.prototype.isEmpty = function() {
  * @return {boolean}
  */
 MyCircularQueue.prototype.isFull = function() {
-  if (this.pFirst === 0 && this.calcIdx(this.pLast) === this.calcIdx(this.fixedNum - 1)) {
-    return true;
-  }
-
-  if (this.calcIdx(this.pFirst) === this.calcIdx(this.pLast + 1) && this.eleNum) {
+  if (this.calcIdx(this.pFirst) === this.calcIdx(this.pLast + 1)) {
     return true;
   }
 
