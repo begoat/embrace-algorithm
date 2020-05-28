@@ -1,7 +1,7 @@
 ---
 date: "2020-05-28"
 title: "Perfect Squares"
-timeSpent: 0
+timeSpent: 30
 wrongTime: 0
 withHelp: false
 conquered: false
@@ -32,6 +32,8 @@ qId: 279
 - 有点棘手，一时间不知道怎么处理
 - 首先肯定都是可以的，因为 大不了都是1，返回就是这个数本身嘛
 - 然后有点像动态规划的问题？因为依赖于之前的
+- 就是一个划分成子问题，分而治之去求解的过程，同时记录已经求过的值避免重复计算
+* 不知道为什么会出现在队列里面
 
 ### Answer:
 
