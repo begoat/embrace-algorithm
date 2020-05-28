@@ -1,7 +1,7 @@
 ---
 date: "2020-05-28"
 title: "Valid Parentheses"
-timeSpent: 0
+timeSpent: 24
 wrongTime: 0
 withHelp: false
 conquered: false
