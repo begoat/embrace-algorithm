@@ -39,7 +39,8 @@ const writeTmpl = (output, name, title, qId, presetDataObj) => {
         if (f === fileList[1]) {
           newData =
             data.slice(0, data.indexOf("##### Description:")) +
-            presetDataObj[f];
+            presetDataObj[f] + '\n' +
+            data.slice(data.indexOf('### Process:'))
         } else {
           newData = presetDataObj[f];
         }
