@@ -1,9 +1,9 @@
 ---
 date: "2020-06-22"
 title: "Clone Graph"
-timeSpent: 0
-wrongTime: 0
-withHelp: false
+timeSpent: 40
+wrongTime: 3
+withHelp: true
 conquered: false
 qId: 133
 ---
