@@ -1,10 +1,10 @@
 ---
 date: "2020-06-29"
 title: "Target Sum"
-timeSpent: 0
+timeSpent: 30
 wrongTime: 0
 withHelp: false
-conquered: false
+conquered: true
 qId: 494
 ---
 
@@ -43,6 +43,7 @@ There are 5 ways to assign symbols to make the sum of nums be target 3.
 
 ### Process:
 - 这道题也不知道为什么放在DFS 和 stack里面，我是用递归解决的，分而治之，变成很小的子问题
+- 我知道了，递归本来就是栈操作
 
 ### Answer:
 
