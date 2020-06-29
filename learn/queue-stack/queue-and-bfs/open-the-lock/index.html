@@ -1,0 +1,67 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 2.19.45"/><title data-react-helmet="true"></title><link rel="icon" href="/embrace-algorithm/icons/icon-48x48.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="manifest" href="/embrace-algorithm/manifest.webmanifest"/><meta name="theme-color" content="#663399"/><link rel="apple-touch-icon" sizes="48x48" href="/embrace-algorithm/icons/icon-48x48.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="72x72" href="/embrace-algorithm/icons/icon-72x72.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="96x96" href="/embrace-algorithm/icons/icon-96x96.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="144x144" href="/embrace-algorithm/icons/icon-144x144.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="192x192" href="/embrace-algorithm/icons/icon-192x192.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="256x256" href="/embrace-algorithm/icons/icon-256x256.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="384x384" href="/embrace-algorithm/icons/icon-384x384.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="512x512" href="/embrace-algorithm/icons/icon-512x512.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link as="script" rel="preload" href="/embrace-algorithm/component---src-templates-blog-post-tsx-6128e3d2f3c1c2435bba.js"/><link as="script" rel="preload" href="/embrace-algorithm/commons-41fde89fd02af95bb4bf.js"/><link as="script" rel="preload" href="/embrace-algorithm/app-2d307468dfb6b7f710ff.js"/><link as="script" rel="preload" href="/embrace-algorithm/webpack-runtime-37774b86197e9d104cbf.js"/><link as="fetch" rel="preload" href="/embrace-algorithm/page-data/learn/queue-stack/queue-and-bfs/open-the-lock/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/embrace-algorithm/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><section><div><h2>Open the Lock</h2>
+<h3>Question：</h3>
+<p>
+You have a lock in front of you with 4 circular wheels.  Each wheel has 10 slots: <code>'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'</code>.  The wheels can rotate freely and wrap around: for example we can turn <code>'9'</code> to be <code>'0'</code>, or <code>'0'</code> to be <code>'9'</code>.  Each move consists of turning one wheel one slot.
+</p><p>
+The lock initially starts at <code>'0000'</code>, a string representing the state of the 4 wheels.
+</p><p>
+You are given a list of <code>deadends</code> dead ends, meaning if the lock displays any of these codes, the wheels of the lock will stop turning and you will be unable to open it.
+</p><p>
+Given a <code>target</code> representing the value of the wheels that will unlock the lock, return the minimum total number of turns required to open the lock, or -1 if it is impossible.
+</p>
+<p><b>Example 1:</b><br />
+<pre>
+<b>Input:</b> deadends = ["0201","0101","0102","1212","2002"], target = "0202"
+<b>Output:</b> 6
+<b>Explanation:</b>
+A sequence of valid moves would be "0000" -> "1000" -> "1100" -> "1200" -> "1201" -> "1202" -> "0202".
+Note that a sequence like "0000" -> "0001" -> "0002" -> "0102" -> "0202" would be invalid,
+because the wheels of the lock become stuck after the display becomes the dead end "0102".
+</pre>
+</p>
+<p><b>Example 2:</b><br />
+<pre>
+<b>Input:</b> deadends = ["8888"], target = "0009"
+<b>Output:</b> 1
+<b>Explanation:</b>
+We can turn the last wheel in reverse to move from "0000" -> "0009".
+</pre>
+</p>
+<p><b>Example 3:</b><br />
+<pre>
+<b>Input:</b> deadends = ["8887","8889","8878","8898","8788","8988","7888","9888"], target = "8888"
+<b>Output:</b> -1
+<b>Explanation:</b>
+We can't reach the target without getting stuck.
+</pre>
+</p>
+<p><b>Example 4:</b><br />
+<pre>
+<b>Input:</b> deadends = ["0000"], target = "8888"
+<b>Output:</b> -1
+</pre>
+</p>
+<p><b>Note:</b><br>
+<ol>
+<li>The length of <code>deadends</code> will be in the range <code>[1, 500]</code>.</li>
+<li><code>target</code> will not be in the list <code>deadends</code>.</li>
+<li>Every string in <code>deadends</code> and the string <code>target</code> will be a string of 4 digits from the 10,000 possibilities <code>'0000'</code> to <code>'9999'</code>.</li>
+</ol>
+</p>
+<h3>Process:</h3>
+<ul>
+<li>这是一个树结构的问题，从0000开始，只改变一个值，就可以有8种变化，依此类推，每一个分支又可以产生8个分支</li>
+<li>所以就是搜索所有的子树，找到target的过程</li>
+<li>目标叶节点的所在的层级，就是我们想要的result</li>
+<li>其中在deadends里面的子树，都是不能再衍生的子树</li>
+<li>因为可以一致的转动，所以如何判定之前转过了呢？用个hashTable去维护</li>
+<li>
+<p>基本就是这个思路，不过得注意下 最少的这个条件，minimal</p>
+<ul>
+<li>其实在算法中 先进先出 最早return的 我觉得就是最小的了。。。</li>
+</ul>
+</li>
+<li>做出来了，卡的一个步骤在于 oneStepMove 的算法写错了 Number(xx) + 1 ，写成了  Number(xx + 1) ...</li>
+</ul>
+<h3>Answer:</h3>
+<h3>Others Answer:</h3></div></section></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/learn/queue-stack/queue-and-bfs/open-the-lock/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-2d307468dfb6b7f710ff.js"],"component---src-templates-blog-index-tsx":["/component---src-templates-blog-index-tsx-d8a29f5720e26d8d499b.js"],"component---src-templates-blog-post-tsx":["/component---src-templates-blog-post-tsx-6128e3d2f3c1c2435bba.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-d64ab2c09507a0b512db.js"]};/*]]>*/</script><script src="/embrace-algorithm/webpack-runtime-37774b86197e9d104cbf.js" async=""></script><script src="/embrace-algorithm/app-2d307468dfb6b7f710ff.js" async=""></script><script src="/embrace-algorithm/commons-41fde89fd02af95bb4bf.js" async=""></script><script src="/embrace-algorithm/component---src-templates-blog-post-tsx-6128e3d2f3c1c2435bba.js" async=""></script></body></html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 2.19.45"/><title data-react-helmet="true"></title><link rel="icon" href="/embrace-algorithm/icons/icon-48x48.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="manifest" href="/embrace-algorithm/manifest.webmanifest"/><meta name="theme-color" content="#663399"/><link rel="apple-touch-icon" sizes="48x48" href="/embrace-algorithm/icons/icon-48x48.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="72x72" href="/embrace-algorithm/icons/icon-72x72.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="96x96" href="/embrace-algorithm/icons/icon-96x96.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="144x144" href="/embrace-algorithm/icons/icon-144x144.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="192x192" href="/embrace-algorithm/icons/icon-192x192.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="256x256" href="/embrace-algorithm/icons/icon-256x256.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="384x384" href="/embrace-algorithm/icons/icon-384x384.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="512x512" href="/embrace-algorithm/icons/icon-512x512.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link as="script" rel="preload" href="/embrace-algorithm/component---src-templates-blog-post-tsx-6128e3d2f3c1c2435bba.js"/><link as="script" rel="preload" href="/embrace-algorithm/commons-41fde89fd02af95bb4bf.js"/><link as="script" rel="preload" href="/embrace-algorithm/app-2d307468dfb6b7f710ff.js"/><link as="script" rel="preload" href="/embrace-algorithm/webpack-runtime-37774b86197e9d104cbf.js"/><link as="fetch" rel="preload" href="/embrace-algorithm/page-data/learn/queue-stack/first-in-first-out-data-structure/design-circular-queue/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/embrace-algorithm/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><section><div><h2>Design Circular Queue</h2>
+<h3>Question：</h3>
+<p>Design your implementation of the circular queue. The circular queue is a linear data structure in which the operations are performed based on FIFO (First In First Out) principle and the last position is connected back to the first position to make a circle. It is also called &quot;Ring Buffer&quot;.</p>
+<p>One of the benefits of the circular queue is that we can make use of the spaces in front of the queue. In a normal queue, once the queue becomes full, we cannot insert the next element even if there is a space in front of the queue. But using the circular queue, we can use the space to store new values.</p>
+<p>Your implementation should support following operations:</p>
+<ul>
+	<li><code>MyCircularQueue(k)</code>: Constructor, set the size of the queue to be k.</li>
+	<li><code>Front</code>: Get the front item from the queue. If the queue is empty, return -1.</li>
+	<li><code>Rear</code>: Get the last item from the queue. If the queue is empty, return -1.</li>
+	<li><code>enQueue(value)</code>: Insert an element into the circular queue. Return true if the operation is successful.</li>
+	<li><code>deQueue()</code>: Delete an element from the circular queue. Return true if the operation is successful.</li>
+	<li><code>isEmpty()</code>: Checks whether the circular queue is empty or not.</li>
+	<li><code>isFull()</code>: Checks whether the circular queue is full or not.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong>Example:</strong></p>
+<pre>
+MyCircularQueue circularQueue = new MyCircularQueue(3); // set the size to be 3
+circularQueue.enQueue(1); &nbsp;// return true
+circularQueue.enQueue(2); &nbsp;// return true
+circularQueue.enQueue(3); &nbsp;// return true
+circularQueue.enQueue(4); &nbsp;// return false, the queue is full
+circularQueue.Rear(); &nbsp;// return 3
+circularQueue.isFull(); &nbsp;// return true
+circularQueue.deQueue(); &nbsp;// return true
+circularQueue.enQueue(4); &nbsp;// return true
+circularQueue.Rear(); &nbsp;// return 4
+</pre>
+<p> </p>
+<p><strong>Note:</strong></p>
+<ul>
+	<li>All values will be in the range of [0, 1000].</li>
+	<li>The number of operations will be in the range of&nbsp;[1, 1000].</li>
+	<li>Please do not use the built-in Queue library.</li>
+</ul></div></section></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/learn/queue-stack/first-in-first-out-data-structure/design-circular-queue/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-2d307468dfb6b7f710ff.js"],"component---src-templates-blog-index-tsx":["/component---src-templates-blog-index-tsx-d8a29f5720e26d8d499b.js"],"component---src-templates-blog-post-tsx":["/component---src-templates-blog-post-tsx-6128e3d2f3c1c2435bba.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-d64ab2c09507a0b512db.js"]};/*]]>*/</script><script src="/embrace-algorithm/webpack-runtime-37774b86197e9d104cbf.js" async=""></script><script src="/embrace-algorithm/app-2d307468dfb6b7f710ff.js" async=""></script><script src="/embrace-algorithm/commons-41fde89fd02af95bb4bf.js" async=""></script><script src="/embrace-algorithm/component---src-templates-blog-post-tsx-6128e3d2f3c1c2435bba.js" async=""></script></body></html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 2.19.45"/><title data-react-helmet="true"></title><link rel="icon" href="/embrace-algorithm/icons/icon-48x48.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="manifest" href="/embrace-algorithm/manifest.webmanifest"/><meta name="theme-color" content="#663399"/><link rel="apple-touch-icon" sizes="48x48" href="/embrace-algorithm/icons/icon-48x48.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="72x72" href="/embrace-algorithm/icons/icon-72x72.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="96x96" href="/embrace-algorithm/icons/icon-96x96.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="144x144" href="/embrace-algorithm/icons/icon-144x144.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="192x192" href="/embrace-algorithm/icons/icon-192x192.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="256x256" href="/embrace-algorithm/icons/icon-256x256.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="384x384" href="/embrace-algorithm/icons/icon-384x384.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link rel="apple-touch-icon" sizes="512x512" href="/embrace-algorithm/icons/icon-512x512.png?v=edf3d310d67f8284a562bc3a58c3e761"/><link as="script" rel="preload" href="/embrace-algorithm/component---src-templates-blog-post-tsx-6128e3d2f3c1c2435bba.js"/><link as="script" rel="preload" href="/embrace-algorithm/commons-41fde89fd02af95bb4bf.js"/><link as="script" rel="preload" href="/embrace-algorithm/app-2d307468dfb6b7f710ff.js"/><link as="script" rel="preload" href="/embrace-algorithm/webpack-runtime-37774b86197e9d104cbf.js"/><link as="fetch" rel="preload" href="/embrace-algorithm/page-data/learn/queue-stack/stack-and-dfs/clone-graph/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/embrace-algorithm/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><section><div><h2>Clone Graph</h2>
+<h3>Question：</h3>
+<p>Given a reference of a node in a&nbsp;<strong><a href="https://en.wikipedia.org/wiki/Connectivity_(graph_theory)#Connected_graph" target="_blank">connected</a></strong>&nbsp;undirected graph.</p>
+<p>Return a <a href="https://en.wikipedia.org/wiki/Object_copying#Deep_copy" target="_blank"><strong>deep copy</strong></a> (clone) of the graph.</p>
+<p>Each node in the graph contains a val (<code>int</code>) and a list (<code>List[Node]</code>) of its neighbors.</p>
+<pre>
+class Node {
+    public int val;
+    public List&lt;Node&gt; neighbors;
+}
+</pre>
+<p>&nbsp;</p>
+<p><strong>Test case format:</strong></p>
+<p>For simplicity sake, each&nbsp;node&#39;s value is the same as the node&#39;s index (1-indexed). For example, the first node with&nbsp;<code>val = 1</code>, the second node with <code>val = 2</code>, and so on.&nbsp;The graph is represented in the test case using an adjacency list.</p>
+<p><b>Adjacency list</b>&nbsp;is a collection of unordered&nbsp;<b>lists</b>&nbsp;used to represent a finite graph. Each&nbsp;list&nbsp;describes the set of neighbors of a node in the graph.</p>
+<p>The given node will&nbsp;always be the first node&nbsp;with&nbsp;<code>val = 1</code>. You must return the <strong>copy of the given node</strong> as a reference to the cloned graph.</p>
+<p>&nbsp;</p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2019/11/04/133_clone_graph_question.png" style="width: 500px; height: 550px;" />
+<pre>
+<strong>Input:</strong> adjList = [[2,4],[1,3],[2,4],[1,3]]
+<strong>Output:</strong> [[2,4],[1,3],[2,4],[1,3]]
+<strong>Explanation:</strong> There are 4 nodes in the graph.
+1st node (val = 1)&#39;s neighbors are 2nd node (val = 2) and 4th node (val = 4).
+2nd node (val = 2)&#39;s neighbors are 1st node (val = 1) and 3rd node (val = 3).
+3rd node (val = 3)&#39;s neighbors are 2nd node (val = 2) and 4th node (val = 4).
+4th node (val = 4)&#39;s neighbors are 1st node (val = 1) and 3rd node (val = 3).
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/01/07/graph.png" style="width: 163px; height: 148px;" />
+<pre>
+<strong>Input:</strong> adjList = [[]]
+<strong>Output:</strong> [[]]
+<strong>Explanation:</strong> Note that the input contains one empty list. The graph consists of only one node with val = 1 and it does not have any neighbors.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre>
+<strong>Input:</strong> adjList = []
+<strong>Output:</strong> []
+<strong>Explanation:</strong> This an empty graph, it does not have any nodes.
+</pre>
+<p><strong>Example 4:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/01/07/graph-1.png" style="width: 272px; height: 133px;" />
+<pre>
+<strong>Input:</strong> adjList = [[2],[1]]
+<strong>Output:</strong> [[2],[1]]
+</pre>
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+<ul>
+	<li><code>1 &lt;= Node.val &lt;= 100</code></li>
+	<li><code>Node.val</code> is unique for each node.</li>
+	<li>Number of Nodes will not exceed 100.</li>
+	<li>There is no repeated edges and no self-loops in the graph.</li>
+	<li>The Graph is connected and all nodes can be visited starting from the given node.</li>
+</ul>
+<h3>Process:</h3>
+<ul>
+<li>placeholder</li>
+</ul>
+<h3>Answer:</h3>
+<h3>Others Answer:</h3></div></section></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/learn/queue-stack/stack-and-dfs/clone-graph/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-2d307468dfb6b7f710ff.js"],"component---src-templates-blog-index-tsx":["/component---src-templates-blog-index-tsx-d8a29f5720e26d8d499b.js"],"component---src-templates-blog-post-tsx":["/component---src-templates-blog-post-tsx-6128e3d2f3c1c2435bba.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-d64ab2c09507a0b512db.js"]};/*]]>*/</script><script src="/embrace-algorithm/webpack-runtime-37774b86197e9d104cbf.js" async=""></script><script src="/embrace-algorithm/app-2d307468dfb6b7f710ff.js" async=""></script><script src="/embrace-algorithm/commons-41fde89fd02af95bb4bf.js" async=""></script><script src="/embrace-algorithm/component---src-templates-blog-post-tsx-6128e3d2f3c1c2435bba.js" async=""></script></body></html>
