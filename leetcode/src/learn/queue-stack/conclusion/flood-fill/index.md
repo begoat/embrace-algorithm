@@ -1,7 +1,7 @@
 ---
 date: "2020-06-30"
 title: "Flood Fill"
-timeSpent: 8 + 26
+timeSpent: 34
 wrongTime: 1
 withHelp: true
 conquered: true
